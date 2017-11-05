@@ -17,9 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="26n-CU-g3V">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jjp-I5-i2f">
+                                    <rect key="frame" x="8" y="61" width="359" height="29"/>
+                                    <segments>
+                                        <segment title="A-Z"/>
+                                        <segment title="Date Added"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="scopeChanged:" destination="T9c-lA-xaZ" eventType="valueChanged" id="fAF-Ex-ytb"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="jjp-I5-i2f" secondAttribute="trailing" constant="8" id="A1j-xr-w2p"/>
+                                <constraint firstItem="jjp-I5-i2f" firstAttribute="leading" secondItem="26n-CU-g3V" secondAttribute="leading" constant="8" id="DfR-Fo-9m1"/>
+                                <constraint firstAttribute="bottom" secondItem="jjp-I5-i2f" secondAttribute="bottom" constant="8" id="qDf-KI-XLH"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TaskTableViewCell" rowHeight="60" id="yVi-MJ-Ole" customClass="TaskTableViewCell" customModule="Task" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="125" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yVi-MJ-Ole" id="DmG-tP-sYL">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>

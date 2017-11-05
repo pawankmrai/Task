@@ -11,28 +11,29 @@ import RealmSwift
 
 class TaskViewController: UITableViewController {
 	//
-	fileprivate var toDoTasks: Results<Task> {
-		get {
-			let sorted = try! Realm().objects(Task.self).sorted(byKeyPath: "createdAt", ascending: true)
-			return sorted
-		}
-	}
-	fileprivate var filteredToDoTasks:Results<Task>?
 	fileprivate let realm = try! Realm()
-	let searchController = UISearchController(searchResultsController: nil)
+	fileprivate var toDoTasks = try! Realm().objects(Task.self).sorted(byKeyPath: "name", ascending: true)
+	fileprivate var searchResults = try! Realm().objects(Task.self)
+	
+	//
+	var searchController: UISearchController!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		// Add search controller
+		// Search result controller
+		let searchResultsController = UITableViewController(style: .plain)
+		searchResultsController.tableView.delegate = self
+		searchResultsController.tableView.dataSource = self
+		searchResultsController.tableView.rowHeight = 60
+		searchResultsController.tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: "TaskTableViewCell")
+		
+		// Search controller
+		searchController = UISearchController(searchResultsController: searchResultsController)
 		searchController.searchResultsUpdater = self
 		searchController.obscuresBackgroundDuringPresentation = false
 		searchController.searchBar.placeholder = "Search task"
-		if #available(iOS 11, *) {
-			
-		} else {
-			tableView.tableHeaderView = searchController.searchBar
-		}
+		tableView.tableHeaderView?.addSubview(searchController.searchBar)
 		definesPresentationContext = true
 	}
 	
@@ -56,54 +57,36 @@ class TaskViewController: UITableViewController {
 		// Dispose of any resources that can be recreated.
 	}
 	
-	//MARK: Table view datasource
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return toDoTasks.count
-	}
-	
-	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let taskCell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell", for: indexPath) as! TaskTableViewCell
-		
-		// Update UI
-		let task  = toDoTasks[indexPath.row]
-		taskCell.lblTitle.attributedText = self.attributedText(actualText: task.name, shouldStrikeThrough: task.isCompleted)
-		taskCell.lblTitle.textColor =  task.isCompleted ? UIColor.lightGray : UIColor.black
-		
-		return taskCell
-	}
-	
-	//MARK: Table view delegate
-	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		
-		// Update task status
-		if indexPath.row < toDoTasks.count {
-			let task  = toDoTasks[indexPath.row]
-			try! realm.write {
-				task.isCompleted = !task.isCompleted
-			}
-		}
+	// MARK: Segment Action
+	@IBAction func scopeChanged(_ sender: Any) {
 		//
-		tableView.reloadRows(at: [indexPath], with: .automatic)
+		let scopeBar = sender as! UISegmentedControl
+		let realm = try! Realm()
+		
+		switch scopeBar.selectedSegmentIndex {
+		case 0:
+			toDoTasks = realm.objects(Task.self).sorted(byKeyPath: "name", ascending: true)
+		case 1:
+			toDoTasks = realm.objects(Task.self).sorted(byKeyPath: "createdAt", ascending: false)
+		default:
+			toDoTasks = realm.objects(Task.self).sorted(byKeyPath: "name", ascending: true)
+		}
+		tableView.reloadData()
 	}
 	
-	override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+	func filterResultsWithSearchString(searchString: String) {
+		let predicate = NSPredicate(format: "name BEGINSWITH [c]%@", searchString)
+		let scopeIndex = searchController.searchBar.selectedScopeButtonIndex
+		let realm = try! Realm()
 		
-		let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { [unowned self] (deleteAction, indexPath) -> Void in
-			//Deletion task
-			let task  = self.toDoTasks[indexPath.row]
-			try! self.realm.write {
-				self.realm.delete(task)
-			}
-			tableView.deleteRows(at: [indexPath], with: .top)
+		switch scopeIndex {
+		case 0:
+			searchResults = realm.objects(Task.self).filter(predicate).sorted(byKeyPath: "name", ascending: true)
+		case 1:
+			searchResults = realm.objects(Task.self).filter(predicate).sorted(byKeyPath: "created", ascending: false)
+		default:
+			searchResults = realm.objects(Task.self).filter(predicate)
 		}
-		let editAction = UITableViewRowAction(style: .normal, title: "Edit") { [unowned self] (editAction, indexPath) -> Void in
-			
-			// Edit Task
-			let task  = self.toDoTasks[indexPath.row]
-			self.updateTask(task: task)
-			
-		}
-		return [deleteAction, editAction]
 	}
 	
 	// MARK: Navigation
@@ -118,11 +101,70 @@ class TaskViewController: UITableViewController {
 		}
 	}
 }
+
+// MARK: Table view datasource
+extension TaskViewController {
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return searchController.isActive ? searchResults.count : toDoTasks.count
+	}
+	
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let taskCell = self.tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell") as! TaskTableViewCell
+		
+		// Update UI
+		let task  = searchController.isActive ? searchResults[indexPath.row] : toDoTasks[indexPath.row]
+		taskCell.lblTitle.attributedText = self.attributedText(actualText: task.name, shouldStrikeThrough: task.isCompleted)
+		taskCell.lblTitle.textColor =  task.isCompleted ? UIColor.lightGray : UIColor.black
+		
+		return taskCell
+	}
+}
+
+//MARK: Table view delegate
+extension TaskViewController {
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		
+		// Update task status
+		if indexPath.row < toDoTasks.count {
+			let task  = searchController.isActive ? searchResults[indexPath.row] : toDoTasks[indexPath.row]
+			try! realm.write {
+				task.isCompleted = !task.isCompleted
+			}
+		}
+		//
+		tableView.reloadRows(at: [indexPath], with: .automatic)
+	}
+	
+	override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+		
+		let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { [unowned self] (deleteAction, indexPath) -> Void in
+			//Deletion task
+			let task  = self.searchController.isActive ? self.searchResults[indexPath.row] : self.toDoTasks[indexPath.row]
+			try! self.realm.write {
+				self.realm.delete(task)
+			}
+			tableView.deleteRows(at: [indexPath], with: .top)
+		}
+		let editAction = UITableViewRowAction(style: .normal, title: "Edit") { [unowned self] (editAction, indexPath) -> Void in
+			
+			// Edit Task
+			let task  = self.searchController.isActive ? self.searchResults[indexPath.row] : self.toDoTasks[indexPath.row]
+			self.updateTask(task: task)
+			
+		}
+		return [deleteAction, editAction]
+	}
+}
+
 // MARK: Search result
 extension TaskViewController: UISearchResultsUpdating {
-	// MARK: - UISearchResultsUpdating Delegate
+	
 	func updateSearchResults(for searchController: UISearchController) {
-		// TODO
+		let searchString = searchController.searchBar.text!
+		filterResultsWithSearchString(searchString: searchString)
+		
+		let searchResultsController = searchController.searchResultsController as! UITableViewController
+		searchResultsController.tableView.reloadData()
 	}
 }
 
