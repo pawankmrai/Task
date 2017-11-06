@@ -61,15 +61,14 @@ class TaskViewController: UITableViewController {
 	@IBAction func scopeChanged(_ sender: Any) {
 		//
 		let scopeBar = sender as! UISegmentedControl
-		let realm = try! Realm()
 		
 		switch scopeBar.selectedSegmentIndex {
 		case 0:
-			toDoTasks = realm.objects(Task.self).sorted(byKeyPath: "name", ascending: true)
+			toDoTasks = toDoTasks.sorted(byKeyPath: "name", ascending: true)
 		case 1:
-			toDoTasks = realm.objects(Task.self).sorted(byKeyPath: "createdAt", ascending: false)
+			toDoTasks = toDoTasks.sorted(byKeyPath: "createdAt", ascending: false)
 		default:
-			toDoTasks = realm.objects(Task.self).sorted(byKeyPath: "name", ascending: true)
+			toDoTasks = toDoTasks.sorted(byKeyPath: "name", ascending: true)
 		}
 		tableView.reloadData()
 	}
@@ -77,15 +76,14 @@ class TaskViewController: UITableViewController {
 	func filterResultsWithSearchString(searchString: String) {
 		let predicate = NSPredicate(format: "name BEGINSWITH [c]%@", searchString)
 		let scopeIndex = searchController.searchBar.selectedScopeButtonIndex
-		let realm = try! Realm()
 		
 		switch scopeIndex {
 		case 0:
-			searchResults = realm.objects(Task.self).filter(predicate).sorted(byKeyPath: "name", ascending: true)
+			searchResults = toDoTasks.filter(predicate).sorted(byKeyPath: "name", ascending: true)
 		case 1:
-			searchResults = realm.objects(Task.self).filter(predicate).sorted(byKeyPath: "created", ascending: false)
+			searchResults = toDoTasks.filter(predicate).sorted(byKeyPath: "created", ascending: false)
 		default:
-			searchResults = realm.objects(Task.self).filter(predicate)
+			searchResults = toDoTasks.filter(predicate)
 		}
 	}
 	
