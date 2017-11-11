@@ -13,6 +13,36 @@ class Task: Object {
 	dynamic var name = ""
 	dynamic var createdAt = NSDate()
 	dynamic var isCompleted = false
+    
+    convenience init(name: String, createdAt: NSDate, isCompleted: Bool) {
+        self.init()
+        self.name = name
+        self.createdAt = createdAt
+        self.isCompleted =  isCompleted
+    }
+    
+    func save() {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(self)
+        }
+    }
+    
+    func update(name: String, createAt: NSDate, isCompleted: Bool) {
+        let realm = try! Realm()
+        try! realm.write {
+            self.name = name
+            self.createdAt = createAt
+            self.isCompleted = isCompleted
+        }
+    }
+    
+    func delete() {
+        let realm  = try! Realm()
+        try! realm.write {
+            realm.delete(self)
+        }
+    }
 }
 
 extension Task {
