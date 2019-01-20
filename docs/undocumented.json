@@ -1,0 +1,432 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/pawan/Documents/Task/Task/AppDelegate.swift",
+      "line": 12,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/AppDelegate.swift",
+      "line": 14,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/AppDelegate.swift",
+      "line": 17,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/AppDelegate.swift",
+      "line": 22,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/AppDelegate.swift",
+      "line": 27,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/AppDelegate.swift",
+      "line": 32,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/AppDelegate.swift",
+      "line": 36,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/AppDelegate.swift",
+      "line": 40,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/Task.swift",
+      "line": null,
+      "symbol": "Task",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/Task.swift",
+      "line": 12,
+      "symbol": "Task",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/Task.swift",
+      "line": 13,
+      "symbol": "Task.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/Task.swift",
+      "line": 14,
+      "symbol": "Task.createdAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/Task.swift",
+      "line": 15,
+      "symbol": "Task.isCompleted",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/Task.swift",
+      "line": 17,
+      "symbol": "Task.init(name:createdAt:isCompleted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/Task.swift",
+      "line": 24,
+      "symbol": "Task.save()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/Task.swift",
+      "line": 31,
+      "symbol": "Task.update(name:createAt:isCompleted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/Task.swift",
+      "line": 40,
+      "symbol": "Task.delete()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/Task.swift",
+      "line": 49,
+      "symbol": "Task.getMockData()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": null,
+      "symbol": "TaskDetailViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 12,
+      "symbol": "TaskEditDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 13,
+      "symbol": "TaskEditDelegate.didFisishTaskEditing()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 16,
+      "symbol": "TaskDetailViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 18,
+      "symbol": "TaskDetailViewController.taskTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 19,
+      "symbol": "TaskDetailViewController.innerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 20,
+      "symbol": "TaskDetailViewController.topView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 21,
+      "symbol": "TaskDetailViewController.lblTitle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 25,
+      "symbol": "TaskDetailViewController.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 26,
+      "symbol": "TaskDetailViewController.sharedTask",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 28,
+      "symbol": "TaskDetailViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 44,
+      "symbol": "TaskDetailViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 51,
+      "symbol": "TaskDetailViewController.cancelTapped(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 56,
+      "symbol": "TaskDetailViewController.saveTaskTapped(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 102,
+      "symbol": "TaskDetailViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskDetailViewController.swift",
+      "line": 113,
+      "symbol": "TaskDetailViewController.textField(_:shouldChangeCharactersIn:replacementString:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskTableViewCell.swift",
+      "line": 11,
+      "symbol": "TaskTableViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskTableViewCell.swift",
+      "line": 13,
+      "symbol": "TaskTableViewCell.lblTitle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskTableViewCell.swift",
+      "line": 14,
+      "symbol": "TaskTableViewCell.innerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskTableViewCell.swift",
+      "line": 16,
+      "symbol": "TaskTableViewCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskTableViewCell.swift",
+      "line": 22,
+      "symbol": "TaskTableViewCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": null,
+      "symbol": "TaskViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": null,
+      "symbol": "TaskViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": null,
+      "symbol": "TaskViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": null,
+      "symbol": "TaskViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": null,
+      "symbol": "TaskViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 12,
+      "symbol": "TaskViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 19,
+      "symbol": "TaskViewController.searchController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 21,
+      "symbol": "TaskViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 41,
+      "symbol": "TaskViewController.addNewTaskTapped(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 50,
+      "symbol": "TaskViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 55,
+      "symbol": "TaskViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 61,
+      "symbol": "TaskViewController.scopeChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 76,
+      "symbol": "TaskViewController.filterResultsWithSearchString(searchString:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 91,
+      "symbol": "TaskViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 105,
+      "symbol": "TaskViewController.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 109,
+      "symbol": "TaskViewController.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 123,
+      "symbol": "TaskViewController.tableView(_:didSelectRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 136,
+      "symbol": "TaskViewController.tableView(_:editActionsForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 160,
+      "symbol": "TaskViewController.updateSearchResults(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 171,
+      "symbol": "TaskViewController.didFisishTaskEditing()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 179,
+      "symbol": "TaskViewController.attributedText(actualText:shouldStrikeThrough:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pawan/Documents/Task/Task/TaskViewController.swift",
+      "line": 193,
+      "symbol": "UIView.addDropShadow()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/pawan/Documents/Task"
+}
