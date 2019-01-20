@@ -16,3 +16,6 @@
 ### Who do I talk to? ###
 
 	- Send mail on ghz.rai@gmail.com for any query.
+
+### Documentation
+	- Documentation for this project can be found [here](https://pawankmrai.github.io/Task/docs/)
