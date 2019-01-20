@@ -60,7 +60,7 @@ class TaskDetailViewController: UIViewController {
 		}
 		
 		// Show alert if nothing entered
-		if editedText.characters.count == 0 {
+		if editedText.count == 0 {
 			showAlert()
 			return
 		}
@@ -90,7 +90,7 @@ class TaskDetailViewController: UIViewController {
 	fileprivate func showAlert() {
 		let alert = UIAlertController(title: "Error",
 		                              message: "Please enter task name",
-		                              preferredStyle: UIAlertControllerStyle.alert)
+		                              preferredStyle: UIAlertController.Style.alert)
 		
 		let cancelAction = UIAlertAction(title: "Ok",
 		                                 style: .cancel, handler: nil)
@@ -112,7 +112,7 @@ extension TaskDetailViewController : UITextFieldDelegate {
 	// Limit characters
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 		guard let text = textField.text else { return true }
-		let newLength = text.characters.count + string.characters.count - range.length
+		let newLength = text.count + string.count - range.length
 		return newLength <= 30
 	}
 	
